@@ -1,3 +1,9 @@
+function createContainer() {
+  const cntr = document.createElement('div');
+  cntr.setAttribute('class', 'container');
+  document.body.appendChild(cntr);
+}
+
 function deleteContainer() {
   const cntr = document.querySelector('.container');
   document.body.removeChild(cntr);
@@ -5,7 +11,7 @@ function deleteContainer() {
 
 function updateGrid() {
   deleteContainer();
-  //create new container
+  createContainer();
   //ask for a number not greater than 100
   //createGrid(number asked)
 }

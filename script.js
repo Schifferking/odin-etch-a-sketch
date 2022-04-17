@@ -1,3 +1,15 @@
+function deleteContainer() {
+  const cntr = document.querySelector('.container');
+  document.body.removeChild(cntr);
+}
+
+function updateGrid() {
+  deleteContainer();
+  //create new container
+  //ask for a number not greater than 100
+  //createGrid(number asked)
+}
+
 function createGrid(squarePerSide=16) {
   const container = document.querySelector('.container');
     

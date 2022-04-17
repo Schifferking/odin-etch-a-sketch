@@ -1,3 +1,13 @@
+function askNumber() {
+  let num = 0;
+
+  do {
+    num = parseInt(prompt("Please enter a number that represents the number of squares per side of the new grid (not greater than 100):"));
+  } while(num <= 0 || num > 100);
+  
+  return num;
+}
+
 function createContainer() {
   const cntr = document.createElement('div');
   cntr.setAttribute('class', 'container');
@@ -12,7 +22,8 @@ function deleteContainer() {
 function updateGrid() {
   deleteContainer();
   createContainer();
-  //ask for a number not greater than 100
+  
+  let num = askNumber();
   //createGrid(number asked)
 }
 

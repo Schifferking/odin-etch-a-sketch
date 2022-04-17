@@ -20,11 +20,11 @@ function deleteContainer() {
 }
 
 function updateGrid() {
+  let num = askNumber();
+
   deleteContainer();
   createContainer();
-  
-  let num = askNumber();
-  //createGrid(number asked)
+  createGrid(num);
 }
 
 function createGrid(squarePerSide=16) {
@@ -39,5 +39,9 @@ function createGrid(squarePerSide=16) {
     container.appendChild(newDiv);
   }
 }
+
+//Add functionality to button
+btn = document.querySelector('button');
+btn.addEventListener('click', updateGrid);
 
 createGrid();

@@ -1,11 +1,3 @@
-function setContainerSize(numOfSquaresPerSide=16) {
-  cntr = document.querySelector('.container');
-  //Each square has 2px extra width because the borders, so
-  // it is adding that to the total width of the container
-  let widthCalculated = 1600 + numOfSquaresPerSide * 2;
-  cntr.style.width = widthCalculated + "px";
-}
-
 function askNumber() {
   let num = 0;
 
@@ -20,7 +12,6 @@ function createContainer(numOfSquares) {
   const cntr = document.createElement('div');
   cntr.setAttribute('class', 'container');  
   document.body.appendChild(cntr);
-  setContainerSize(numOfSquares);
 }
 
 function deleteContainer() {

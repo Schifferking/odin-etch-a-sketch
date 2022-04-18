@@ -3,7 +3,7 @@ function setContainerSize(numOfSquaresPerSide=16) {
   //Each square has 2px extra width because the borders, so
   // it is adding that to the total width of the container
   let widthCalculated = 1600 + numOfSquaresPerSide * 2;
-  cntr.style.width = widthCalculated +"px";
+  cntr.style.width = widthCalculated + "px";
 }
 
 function askNumber() {
@@ -16,11 +16,11 @@ function askNumber() {
   return num;
 }
 
-function createContainer() {
+function createContainer(numOfSquares) {
   const cntr = document.createElement('div');
-  cntr.setAttribute('class', 'container');
-  //put div size function
+  cntr.setAttribute('class', 'container');  
   document.body.appendChild(cntr);
+  setContainerSize(numOfSquares);
 }
 
 function deleteContainer() {
@@ -54,7 +54,5 @@ btn = document.querySelector('button');
 btn.addEventListener('click', updateGrid);
 
 //TODO
-//set container div size function
 //change size of squares based on div size
-setContainerSize();
 createGrid();

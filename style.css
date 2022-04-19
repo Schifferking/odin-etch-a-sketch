@@ -9,13 +9,12 @@ button {
 }
 
 .container {
+    width: 1000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .square {
-    width: 100px;
-    height: 100px;
     border: 1px solid black;
 }

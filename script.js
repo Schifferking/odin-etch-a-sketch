@@ -1,3 +1,12 @@
+function setSquareSize() {
+  const squares = document.querySelectorAll('.square');
+
+  squares.forEach(square => {
+    square.style.width = "60.5px";
+    square.style.height = "60.5px";
+  });
+}
+
 function askNumber() {
   let num = 0;
 
@@ -8,7 +17,7 @@ function askNumber() {
   return num;
 }
 
-function createContainer(numOfSquares) {
+function createContainer() {
   const cntr = document.createElement('div');
   cntr.setAttribute('class', 'container');  
   document.body.appendChild(cntr);
@@ -44,6 +53,5 @@ function createGrid(squarePerSide=16) {
 btn = document.querySelector('button');
 btn.addEventListener('click', updateGrid);
 
-//TODO
-//change size of squares based on div size
-createGrid();
+createGrid(16);
+setSquareSize();

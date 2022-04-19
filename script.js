@@ -1,3 +1,7 @@
+function randomIntRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 function setSquareSize(numOfSquares) {
   const squares = document.querySelectorAll('.square');
   let containerOffsetWidth = 1000 - (numOfSquares * 2);
@@ -45,7 +49,10 @@ function createGrid(squarePerSide=16) {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'square'); 
     newDiv.addEventListener("mouseover", function(event) {
-        newDiv.style.backgroundColor = "black";        
+        const r = randomIntRange(0, 255);
+        const g = randomIntRange(0, 255);
+        const b = randomIntRange(0, 255);
+        newDiv.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
     });
     container.appendChild(newDiv);
   }

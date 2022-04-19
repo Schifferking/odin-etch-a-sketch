@@ -1,9 +1,11 @@
-function setSquareSize() {
+function setSquareSize(numOfSquares) {
   const squares = document.querySelectorAll('.square');
+  let containerOffsetWidth = 1000 - (numOfSquares * 2);
+  let squareSize = containerOffsetWidth / numOfSquares;
 
   squares.forEach(square => {
-    square.style.width = "60.5px";
-    square.style.height = "60.5px";
+    square.style.width = squareSize + "px";
+    square.style.height = squareSize + "px";
   });
 }
 
@@ -43,10 +45,11 @@ function createGrid(squarePerSide=16) {
     const newDiv = document.createElement('div');
     newDiv.setAttribute('class', 'square'); 
     newDiv.addEventListener("mouseover", function(event) {
-        newDiv.style.backgroundColor = "black";
+        newDiv.style.backgroundColor = "black";        
     });
     container.appendChild(newDiv);
   }
+  setSquareSize(squarePerSide);
 }
 
 //Add functionality to button
@@ -54,4 +57,4 @@ btn = document.querySelector('button');
 btn.addEventListener('click', updateGrid);
 
 createGrid(16);
-setSquareSize();
+setSquareSize(16);

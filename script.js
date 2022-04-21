@@ -1,3 +1,28 @@
+function reduceTenPercent(numbers) {
+  let nums = [];
+  
+  for (let i = 0; i < 3; i++) {
+    nums.push(numbers[i] - (numbers[i] / 10));
+  }
+
+  return nums;
+}
+
+function convertToInt(stringNumbers) {
+  let numbers = [];
+
+  for (let i = 0; i < 3; i++) {
+    numbers.push(parseInt(stringNumbers[i]));
+  }
+
+  return numbers;
+}
+
+function getRGBValues(colorString) {
+  values = colorString.slice(4, colorString.length - 1);  
+  return convertToInt(values.split(','));
+}
+
 function setRandomColor(square) {
   const r = randomIntRange(0, 255);
   const g = randomIntRange(0, 255);
@@ -64,8 +89,12 @@ function createGrid(squarePerSide=16) {
         newDiv.style.textContent = "1";
       } else {
         let timesHovered = parseInt(newDiv.style.textContent);
+        let rgbValues = getRGBValues(newDiv.style.backgroundColor);
+
         timesHovered += 1;
-        newDiv.style.textContent = timesHovered;          
+        newDiv.style.textContent = timesHovered;
+        rgbValues = reduceTenPercent(rgbValues);        
+        newDiv.style.backgroundColor = "rgb(" + rgbValues[0] + "," + rgbValues[1] + "," + rgbValues[2] + ")";
         if (timesHovered === 10) {
           newDiv.style.backgroundColor = "rgb(" + 0 + "," + 0 + "," + 0 + ")";
         }          
